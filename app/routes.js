@@ -52,7 +52,33 @@ module.exports = function (app) {
     });
 
     // application -------------------------------------------------------------
+    /*
     app.get('*', function (req, res) {
         res.sendFile(__dirname + '/public/index.html'); // load the single view file (angular will handle the page changes on the front-end)
+    });*/
+
+    app.get('/', function (req, res) {
+        res.sendFile(__dirname + '/public/index.html'); // load the single view file (angular will handle the page changes on the front-end)
+    });
+
+    app.get('/about', function (req, res) {
+        //console.log("Got a GET request for /about");
+        //res.send('About page');
+        res.sendFile(__dirname + '/public/about.html');
+    });
+    app.get('/services', function (req, res) {
+        res.sendFile(__dirname + '/public/services.html');
+    });
+    app.get('/subscriptions', function (req, res) {
+        res.sendFile(__dirname + '/public/subscriptions.html');
+    });
+    app.get('/testimonials', function (req, res) {
+        res.sendFile(__dirname + '/public/testimonials.html');
+    });
+    app.get('/remote-access', function (req, res) {
+        res.sendFile(__dirname + '/public/remote-access.html');
+    });
+    app.get('/contact', function (req, res) {
+        res.sendFile(__dirname + '/public/contact.html');
     });
 };
