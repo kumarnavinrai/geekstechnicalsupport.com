@@ -1,13 +1,25 @@
 <!DOCTYPE html>
-<html>
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="scotchTodo">
 <head>
-    <meta charset="UTF-8">
+	<!-- META -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
     <title>Geeks | Homepage</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/libs/bootstrap/css/bootstrap.min.css">
+    <!-- SPELLS -->
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script><!-- load angular -->
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script>
+
+
+	<script src="js/controllers/main.js"></script> <!-- load up our controller -->
+	<script src="js/services/todos.js"></script> <!-- load our todo service -->
+	<script src="js/core.js"></script> <!-- load our main application -->
 </head>
-<body>
+<!-- SET THE CONTROLLER -->
+<body ng-controller="mainController">
 
     <header>
         <div class="container-fluid">
@@ -16,13 +28,13 @@
             </div>
             <div class="col-xs-8 text-right">
                 <ul>
-                    <li><a class="selected" href="/">Home</a></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/services">Services</a></li>
-                    <li><a href="/subscriptions">Subscriptions</a></li>
-                    <li><a href="/remote-access">Remote Access</a></li>
-                    <li><a href="/testimonials">Testimonials</a></li>
-                    <li><a href="/contact">Contact</a></li>
+                    <li><a class="selected" href="#/">Home</a></li>
+                    <li><a href="#/about">About</a></li>
+                    <li><a href="#/services">Services</a></li>
+                    <li><a href="#/subscriptions">Subscriptions</a></li>
+                    <li><a href="#/remote-access">Remote Access</a></li>
+                    <li><a href="#/testimonials">Testimonials</a></li>
+                    <li><a href="#/contact">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -31,6 +43,55 @@
         <span>Open 24 Hours 7 days a week</span>
         <strong>CALL NOW: 1-800-832-5450</strong>
     </section>      
+    <!-- Testing Start -->
+    <div class="container" >
+
+		<!-- HEADER AND TODO COUNT -->
+		<div class="jumbotron text-center">
+			<h1>I'm a Todo-aholic <span class="label label-info">{{ todos.length }}</span></h1>
+		</div>
+
+		<!-- TODO LIST -->
+		<div id="todo-list" class="row">
+			<div class="col-sm-4 col-sm-offset-4">
+
+				
+
+				<!-- LOOP OVER THE TODOS IN $scope.todos -->
+				<div class="checkbox" ng-repeat="todo in todos">
+					<label>
+						<input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.text }}
+					</label>
+				</div>
+
+				<p class="text-center" ng-show="loading">
+					<span class="fa fa-spinner fa-spin fa-3x"></span>
+				</p>
+
+			</div>
+		</div>
+
+		<!-- FORM TO CREATE TODOS -->
+		<div id="todo-form" class="row">
+			<div class="col-sm-8 col-sm-offset-2 text-center">
+				<form>
+					<div class="form-group">
+
+						<!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
+						<input type="text" class="form-control input-lg text-center" placeholder="I want to buy a puppy that will love me forever" ng-model="formData.text">
+					</div>
+
+					<!-- createToDo() WILL CREATE NEW TODOS -->
+					<button type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Add</button>
+				</form>
+			</div>
+		</div>
+
+	
+
+	</div>
+
+    <!-- Testing Ends -->
 
     <script data-config="js/config" src="js/libs/requirejs/require.js"></script>
 </body>
