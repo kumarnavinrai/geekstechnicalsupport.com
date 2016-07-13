@@ -64,6 +64,24 @@ header {
   .usa-testimonials > p {
     font-size: 2.8rem;
     padding: 0 30px 15px 30px; }
+  .usa-testimonials .radiator {
+    background: transparent;
+    border: 2px solid #FFF;
+    border-radius: 100%;
+    height: 0px;
+    opacity: 1;
+    overflow: hidden;
+    position: absolute;
+    visibility: hidden;
+    width: 0px; }
+  .usa-testimonials .open {
+    height: 100px;
+    opacity: 0;
+    -webkit-transition-duration: 2s;
+    -webkit-transition-property: all;
+    -webkit-transition-timing-function: ease-in-out;
+    visibility: visible;
+    width: 100px; }
 
 .testimony-wrapper {
   background: #FFF;
@@ -90,6 +108,10 @@ header {
       z-index: 1; }
   .testimony-wrapper .left-nav {
     left: 0; }
+  .testimony-wrapper .reviewers {
+    display: none; }
+  .testimony-wrapper .reviewers.selected {
+    display: block; }
   .testimony-wrapper .review-col-left {
     padding: 10px 0 10px 40px; }
   .testimony-wrapper .review-col-right {
@@ -128,6 +150,75 @@ header {
       stroke: #FFF;
       stroke-opacity: 1;
       stroke-width: 5; }
+    .svg-wrapper .svg-usa .dot {
+      fill: #FFF; }
+
+.geekstech .brand-section .brand-section-row .brandsection-tow-column-div .panel-group .panel-default .panel-heading {
+  color: #333;
+  background-color: #EE4145;
+  border-color: #ddd; }
+  .geekstech .brand-section .brand-section-row .brandsection-tow-column-div .panel-group .panel-default .panel-heading a {
+    text-decoration: none;
+    color: #fff;
+    width: 100%;
+    height: 100%; }
+    .geekstech .brand-section .brand-section-row .brandsection-tow-column-div .panel-group .panel-default .panel-heading a .panel-title {
+      margin-top: 5px;
+      margin-bottom: 5px; }
+
+.geekstech .brand-section .brand-section-row .brandsection-tow-column-div .panel-group .panel-default .panel-collapse .panel-body {
+  color: #ffffff;
+  border: 0px; }
+
+.geekstech .brand-section .brand-section-row .brandsection-tow-column-div .panel-group .panel-default:first-child .panel-heading a .panel-title .glyphicon-triangle-right:before {
+  content: "\e250";
+  /* up arraow */ }
+
+.geekstech .brand-section .brand-section-row .brandsection-tow-column-div .panel-group .panel-default:not(:first-child) .panel-heading a .panel-title .glyphicon-triangle-right:before {
+  content: "\e252";
+  /* down arraow */ }
+
+.glyphicon-triangle-right-cust:before {
+  content: "\e250" !important;
+  /* up arraow */ }
+
+.glyphicon-triangle-bottom:before {
+  content: "\e252" !important;
+  /* down arraow */ }
+
+section {
+  background-color: #C04342; }
+
+hr {
+  padding: 20px;
+  border: none;
+  background-color: #1B4283;
+  margin: 0px; }
+
+.pre-form h2 {
+  color: #ffffff; }
+
+.panel-body {
+  padding: 0px; }
+
+.panel-body > ul {
+  margin: 15px; }
+
+.glyphicon-ok-sign {
+  color: #fff;
+  font-size: 35px;
+  float: right;
+  top: -0.227em; }
+
+.panel-group .panel {
+  margin-bottom: 0;
+  border-radius: 0px;
+  background-color: #EE4145; }
+
+.brandsection-learnmore-text {
+  font-size: 15px;
+  letter-spacing: 1px;
+  background-color: #4E4E4E; }
 
 .mobile-header-menu {
   background: #1F4280;
@@ -285,15 +376,14 @@ header {
 @media (min-width: 1100px) {
   .svg-wrapper {
     padding: 0 0 500px 0; } }
+
 @media (max-width: 1000px) {
   .desktop-header-menu {
     display: none; }
-
   .mobile-header-menu {
     display: block; } }
+
 @media (max-width: 400px) {
   .mobile-header-menu > img {
     margin: 1.5em;
     width: 200px; } }
-
-/*# sourceMappingURL=styles.css.map */
