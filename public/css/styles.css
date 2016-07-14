@@ -110,8 +110,22 @@ header {
     left: 0; }
   .testimony-wrapper .reviewers {
     display: none; }
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
   .testimony-wrapper .reviewers.selected {
-    display: block; }
+    display: block;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s; }
   .testimony-wrapper .review-col-left {
     padding: 10px 0 10px 40px; }
   .testimony-wrapper .review-col-right {
@@ -219,6 +233,77 @@ hr {
   font-size: 15px;
   letter-spacing: 1px;
   background-color: #4E4E4E; }
+
+.carousel-inner > .item > a > img, .carousel-inner > .item > img {
+  line-height: 1; }
+
+.geekstech #myCarousel ol {
+  bottom: 200px; }
+
+.geekstech #myCarousel .carousel-inner .item .carousel-caption {
+  bottom: 250px; }
+  .geekstech #myCarousel .carousel-inner .item .carousel-caption .first-head-slider {
+    font-size: 6em; }
+  .geekstech #myCarousel .carousel-inner .item .carousel-caption .second-head-slider {
+    font-size: 5em; }
+
+.geekstech .green-div-shoing-phone-no {
+  background-color: #699540;
+  position: absolute;
+  width: 100%;
+  margin-top: -11.3em;
+  opacity: 0.8; }
+  .geekstech .green-div-shoing-phone-no .row .green div img {
+    width: 30%;
+    margin: 5%; }
+  .geekstech .green-div-shoing-phone-no .row .green div h2 {
+    color: #ffffff; }
+    .geekstech .green-div-shoing-phone-no .row .green div h2 strong {
+      font-size: 2em; }
+  .geekstech .green-div-shoing-phone-no .row .green div h4 {
+    color: #ffffff; }
+
+.geekstech .mainfooter {
+  background-color: #1C4281; }
+  .geekstech .mainfooter .container .row div h2 {
+    color: #ffffff; }
+  .geekstech .mainfooter .container .row div hr {
+    padding: 1px;
+    border: none;
+    background-color: #ffffff;
+    margin: 0px; }
+  .geekstech .mainfooter .container .row div p {
+    color: #ABCBE1;
+    padding: 5px 2px;
+    letter-spacing: 1px; }
+  .geekstech .mainfooter .container .row div ul {
+    padding: 5px 2px; }
+    .geekstech .mainfooter .container .row div ul li {
+      padding: 2px;
+      color: #ABCBE1; }
+      .geekstech .mainfooter .container .row div ul li a {
+        color: #ABCBE1; }
+  .geekstech .mainfooter .container .row div h4 {
+    color: #ABCBE1; }
+
+.geekstech .before-footer .container #contact div .form-group {
+  text-align: right; }
+  .geekstech .before-footer .container #contact div .form-group input {
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 8px;
+    width: 80%; }
+  .geekstech .before-footer .container #contact div .form-group input {
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 8px; }
+  .geekstech .before-footer .container #contact div .form-group textarea {
+    font-size: 20px;
+    border-radius: 8px; }
+  .geekstech .before-footer .container #contact div .form-group .btn-primary {
+    color: #fff;
+    background-color: #1C4281;
+    border-color: #1C4281; }
 
 .mobile-header-menu {
   background: #1F4280;
