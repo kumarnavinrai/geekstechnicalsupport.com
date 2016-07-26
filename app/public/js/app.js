@@ -1,4 +1,4 @@
-define(['jquery', 'bootstrap', 'menu'], function (){
+define(['jquery', 'bootstrap', 'menu', 'visible'], function (){
     'use strict';
     var App = {
         initialize: function () {
@@ -7,10 +7,67 @@ define(['jquery', 'bootstrap', 'menu'], function (){
             this.renderCarousel();
         },
         events: function () {
+            
+            this.showEachTestimonial();
+            this.toggleAccordionArrows();
+            this.animatePitchIcons();
+            this.initializeFixedPhoneNumber();
+            
+        },
+        renderRadiator: function (setCSSClass, xyPosition, currentTarget) {
+            $('.radiator').css({
+                left: parseInt($(currentTarget).position().left) + xyPosition + 'px',
+                top: parseInt($(currentTarget).position().top) + xyPosition + 'px'
+            });
+            $(".radiator")[setCSSClass]("open");
+        },
+        renderCarousel: function () {
+            $('#myCarousel').carousel();
+            var winWidth = $(window).innerWidth();
+        },
+        animatePitchIcons: function () {
+            var $pitchIcons = $(".purple-ring, .green-ring");
+            $(window).scroll(function (event) {
+                $pitchIcons.each(function (i, el) {
+                    var el = $(el);
+                    if (el.visible(true)) {
+                        el.removeClass('invisible');
+                        el.addClass("animated bounceIn"); 
+                    } else {
+                        el.addClass('invisible');
+                        el.removeClass("animated bounceIn");
+                    }
+                });
+            });
+           
+        },
+        initializeFixedPhoneNumber: function () {
+            var $phoneNumber = $(".green-div-shoing-phone-no");
+            var phoneNumberInitialPosition = $phoneNumber.offset().top;
+            var that = this;
+            $(window).resize(function () {
+                $phoneNumber.removeClass("fixed-position");
+                phoneNumberInitialPosition = $phoneNumber.offset().top;
+                $phoneNumber.addClass("fixed-position");
+                that.applyFixedPhoneNumber($phoneNumber, phoneNumberInitialPosition);
+            });
+            $(window).scroll(function () {
+                that.applyFixedPhoneNumber($phoneNumber, phoneNumberInitialPosition);
+            });
+        },
+        applyFixedPhoneNumber: function (phoneNumber, phoneNumberInitialPosition) {
+            var $windowViewTopPosition = $(window).scrollTop();
+            if (phoneNumberInitialPosition <= $windowViewTopPosition) {
+                $(phoneNumber).addClass("fixed-position");
+            } else {
+                $(phoneNumber).removeClass("fixed-position");
+            }
+        },
+        showEachTestimonial: function () {
+            // Event Listener for the showing of the testimonials
             var that = this;
             var radiatorTimer = "";
 
-            // Event Listener for the radiating dots
             $(".left-nav, .right-nav").on("click", function (e) {
                 var $currentTarget = $(e.currentTarget);
                 var $reviewers = $(".reviewers");
@@ -63,13 +120,9 @@ define(['jquery', 'bootstrap', 'menu'], function (){
                         .getBoundingClientRect().width / 2), elCurrentDot);
                 }, 2100);
             });
-            // Event Listener for the showing of the testimonials
-            $(".left-nav, .right-nav").on("click", function (e) {
-                var $reviewers = $(".reviewers");
-                
-            });
-
-             //accordian arrow change logic
+        },
+        toggleAccordionArrows: function () {
+            //accordian arrow change logic
             $(".c_brand").on("click",function(e){
                 // DOM ELEMENTS
                 var clicledele = $(this);
@@ -106,31 +159,6 @@ define(['jquery', 'bootstrap', 'menu'], function (){
                         } 
                     }
                 });
-            });
-        },
-        renderRadiator: function (setCSSClass, xyPosition, currentTarget) {
-            $('.radiator').css({
-                left: parseInt($(currentTarget).position().left) + xyPosition + 'px',
-                top: parseInt($(currentTarget).position().top) + xyPosition + 'px'
-            });
-            $(".radiator")[setCSSClass]("open");
-        },
-        renderCarousel: function () {
-            $('#myCarousel').carousel();
-            var winWidth = $(window).innerWidth();
-            $(window).resize(function () {
-
-                
-                    // $('.carousel-inner>.item>img').css({
-                    //     'min-width': winWidth, 'width': winWidth
-                    // });
-                
-                // else {
-                //     winWidth = $(window).innerWidth();
-                //     $('.carousel-inner>.item>img').css({
-                //         'min-width': '', 'width': ''
-                //     });
-                // }
             });
         }
     };

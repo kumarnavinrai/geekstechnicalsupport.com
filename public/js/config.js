@@ -4,7 +4,8 @@ require.config({
         bootstrap: "libs/bootstrap/bootstrap.min",
         jquery: "libs/jquery/jquery.min",
         menu: "menu",
-        snap: "libs/snap/snap.svg-min"
+        snap: "libs/snap/snap.svg-min",
+        visible: "visible"
     },
     waitSeconds: 30,
     shim: {
