@@ -8,10 +8,12 @@ define(['jquery', 'bootstrap', 'menu', 'visible'], function (){
         },
         events: function () {
             
-            this.showEachTestimonial();
-            this.toggleAccordionArrows();
-            this.animatePitchIcons();
-            this.initializeFixedPhoneNumber();
+            if ($("#home").length > 0) {
+                this.showEachTestimonial();
+                this.toggleAccordionArrows();
+                this.animatePitchIcons();
+                this.initializeFixedPhoneNumber();
+            }
             
         },
         renderRadiator: function (setCSSClass, xyPosition, currentTarget) {
@@ -68,7 +70,7 @@ define(['jquery', 'bootstrap', 'menu', 'visible'], function (){
             var that = this;
             var radiatorTimer = "";
 
-            $(".left-nav, .right-nav").on("click", function (e) {
+            $(".left-nav, .right-nav, .dot").on("click", function (e) {
                 var $currentTarget = $(e.currentTarget);
                 var $reviewers = $(".reviewers");
                 var $currentDot = '';
@@ -77,8 +79,10 @@ define(['jquery', 'bootstrap', 'menu', 'visible'], function (){
 
                 if ($currentTarget.attr("class") === "right-nav") {
                     that.testimonialCounter >= testimonialsLength - 1 ? that.testimonialCounter = 0 : that.testimonialCounter++;
-                } else {
+                } else if ($currentTarget.attr("class") === "left-nav") {
                     that.testimonialCounter <= 0 ? that.testimonialCounter = testimonialsLength - 1 : that.testimonialCounter--;
+                } else {
+                    that.testimonialCounter = $(".dot").index($currentTarget); 
                 }
 
                 $currentDot = $('.dot[data-reviewer='+ that.testimonialCounter +']');

@@ -3,7 +3,6 @@ define(function(require) {
     var menu = {
         initialize: function  () {
             this.bodyEl = document.body;
-		    this.content = document.querySelector( '.content-wrap' );
             this.openbtn = document.getElementById( 'open-button' );
             this.closebtn = document.getElementById( 'close-button' );
             this.isOpen = false;
@@ -29,14 +28,6 @@ define(function(require) {
                      that.toggleMenu(that) 
                 });
             }
-
-            // close the menu element if the target it´s not the menu element or one of its descendants..
-            this.content.addEventListener( 'click', function(ev) {
-                var target = ev.target;
-                if( this.isOpen && target !== this.openbtn ) {
-                    this.toggleMenu(that);
-                }
-            });
         },
         toggleMenu: function (that) {
             if( that.isAnimating ) return false;
