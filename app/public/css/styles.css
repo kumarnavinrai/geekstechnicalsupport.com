@@ -591,6 +591,86 @@ strong.sze {
     .geekstech .txt h2 span {
       font-size: 1.4rem; } }
 
+.row.sliide12 {
+  background: url("../images/subscribe-image.jpg");
+  height: 36em; }
+
+h1.first-head31 {
+  padding: 0em 1em 1em 2em;
+  font-size: 6em;
+  font-weight: bold;
+  color: #fff; }
+
+p.prodct-heading {
+  font-size: 3em;
+  margin: 0.5em 4em;
+  color: #fff; }
+
+h2.undrline {
+  text-decoration: underline; }
+
+.row.pdng {
+  margin-left: 7em;
+  margin-top: 3em;
+  margin-bottom: 2em; }
+
+h2.big-size {
+  FONT-SIZE: 2.5em; }
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #c7e7f6 !important; }
+
+th.hed-fnt {
+  font-size: 26px; }
+
+td.sze-fnt {
+  font-size: 18px;
+  font-weight: bold; }
+
+.col-lg-12.hyt {
+  height: 4em; }
+
+td.tickk {
+  padding: 1.5em 0.5em !important; }
+
+td.tick-secure {
+  padding: 2em 0.7em !important; }
+
+td.tick-free {
+  padding: 3em 0.7em !important; }
+
+.brandsection-Continue-text {
+  font-size: 15px;
+  letter-spacing: 1px;
+  background-color: #4E4E4E;
+  width: 26.7em;
+  color: #fff;
+  margin-left: -1em; }
+
+.col-lg-12.bck-clr {
+  background-color: #f2f2f2;
+  width: 28.6em;
+  margin: 0em 1em; }
+
+.brandsection2-Continue-text {
+  font-size: 15px;
+  letter-spacing: 1px;
+  background-color: #4E4E4E;
+  width: 18em;
+  color: #fff;
+  margin-left: -1em; }
+
+.col-lg-12.bck-clr1 {
+  background-color: #f2f2f2;
+  width: 19.4em;
+  margin: 0em 1em; }
+
+img.img-responsive.center {
+  margin: 17px auto; }
+
+h2.big-size1 {
+  font-size: 2.6em; }
+
 /* ---------------Testimonial start-------------- */
 @media (max-width: 479px) {
   .row.sliide1 {
