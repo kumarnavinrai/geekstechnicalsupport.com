@@ -84,4 +84,5 @@ module.exports = function (app) {
     app.get('/contact', function (req, res) {
         res.sendFile(__dirname + '/public/contact.html');
     });
+    
 };
