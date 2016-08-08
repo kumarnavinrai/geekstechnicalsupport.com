@@ -1,4 +1,4 @@
-define(['jquery', 'bootstrap', 'menu', 'visible'], function (){
+define(['jquery', 'bootstrap', 'menu', 'visible', 'jqueryEasing'], function (){
     'use strict';
     var App = {
         initialize: function () {
@@ -13,8 +13,19 @@ define(['jquery', 'bootstrap', 'menu', 'visible'], function (){
                 this.toggleAccordionArrows();
                 this.animatePitchIcons();
                 this.initializeFixedPhoneNumber();
+                this.scrollToAnchor();
+                return
             }
             
+        },
+        scrollToAnchor: function () {
+            $('a.page-scroll').on('click', function(event) {
+                var $anchor = $(this);
+                $('html, body').stop().animate({
+                    scrollTop: ($($anchor.attr('href')).offset().top - 50)
+                }, 1250, 'easeInOutExpo');
+                event.preventDefault();
+            });
         },
         renderRadiator: function (setCSSClass, xyPosition, currentTarget) {
             $('.radiator').css({
