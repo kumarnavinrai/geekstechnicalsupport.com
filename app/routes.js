@@ -72,6 +72,9 @@ module.exports = function (app) {
     app.get('/subscriptions', function (req, res) {
         res.sendFile(__dirname + '/public/subscriptions.html');
     });
+    app.get('/noofdevices', function (req, res) {
+        res.sendFile(__dirname + '/public/subscriptions-step.html');
+    });
     app.get('/testimonials', function (req, res) {
         res.sendFile(__dirname + '/public/testimonials.html');
     });
